@@ -80,31 +80,39 @@ body > .info {
   padding: var(--padding);
 }
 
-.info .metedata .hashtags {
+.info .metadata .hashtags {
   display: flex;
   font-size: var(--font-small);
   color: var(--blue-color);
 }
 
-.info .metedata .hashtags li {
+.info .metadata .hashtags li {
   margin-right: var(--padding);
 }
 
-.info .metedata .titleAndButton {
+.info .metadata .titleAndButton {
   display: flex;
 }
 
-.info .metedata .titleAndButton .title {
+.info .metadata .titleAndButton .title {
   font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .title.clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-right: var(--padding);
 }
 
-.info .metedata .titleAndButton .moreBtn {
+.info .metadata .titleAndButton .moreBtn {
   height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
 }
 
 .info .views {
@@ -140,29 +148,30 @@ body > .info {
   justify-content: space-between;
   border-top: 1px solid var(--grey-light-color);
   border-bottom: 1px solid var(--grey-light-color);
+  padding: var(--padding);
 }
 
-.info .channel .metedata {
+.info .channel .metadata {
   display: flex;
   align-items: center;
 }
 
-.info .channel .metedata img {
+.info .channel .metadata img {
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 50%;
 }
 
-.info .channel .metedata .info {
+.info .channel .metadata .info {
   display: flex;
   flex-direction: column;
 }
 
-.info .channel .metedata .info .name {
+.info .channel .metadata .info .name {
   font-size: var(--font-medium);
 }
 
-.info .channel .metedata .info .subscribers {
+.info .channel .metadata .info .subscribers {
   font-size: var(--font-small);
   color: var(--grey-dark-color);
 }
@@ -220,4 +229,20 @@ body > .info {
 .upNext .item .info .views {
   font-size: var(--font-micro);
   color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+
+  .upNext {
+    padding: var(--spacing);
+  }
 }
